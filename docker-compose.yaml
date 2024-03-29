@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eduardorogerio/swoole-php-app
+    restart: unless-stopped
+    ports:
+      - '82:9501'
+    volumes:
+      - './:/var/www/html'
+    networks:
+      - swoole-app
+networks:
+  swoole-app:
+    driver: bridge
