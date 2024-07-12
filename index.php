@@ -11,7 +11,7 @@ $server->on("start", function ($server) {
 
 $server->on("request", function (Request $request, Response $response){
   $response->header("Content-type", "text/html");
-  $response->end('<h1>Olá Mundo!!</h1>');
+  $response->end('<h1>Olá Mundo !!</h1>');
 });
 
 $server->start();

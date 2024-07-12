@@ -1,11 +1,11 @@
-FROM php:8.1-cli
+FROM phpswoole/swoole:php8.1
 
-RUN apt-get update && apt-get install -y \
-    libssl-dev \
-    && pecl install swoole \
-    && docker-php-ext-enable swoole
+# RUN apt-get update && apt-get install -y \
+#     libssl-dev \
+#     && pecl install swoole \
+#     && docker-php-ext-enable swoole
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
