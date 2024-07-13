@@ -4,8 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: eduardorogerio/swoole-php-app
-    restart: unless-stopped
+    image: swoole-http-server 
     ports:
       - '82:9501'
     volumes:

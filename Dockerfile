@@ -15,5 +15,5 @@ WORKDIR /var/www/html
 
 EXPOSE 9501
 
-ENTRYPOINT ["php","index.php","start"]
+ENTRYPOINT ["/bin/bash"]
 
