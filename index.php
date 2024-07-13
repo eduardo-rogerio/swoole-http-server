@@ -10,8 +10,19 @@ $server->on("start", function ($server) {
 });
 
 $server->on("request", function (Request $request, Response $response){
+  $params = [];
+  $name = 'Mundo';
+
+  if(isset($request->server['query_string'])){
+    parse_str($request->server['query_string'], $params);
+  }
+  
+  if(isset($params['name'])){
+    $name = $params['name'];
+  }
+
   $response->header("Content-type", "text/html");
-  $response->end('<h1>Olá Mundo !!</h1>');
+  $response->end('<h1>Olá '.$name.' !!</h1>');
 });
 
 $server->start();

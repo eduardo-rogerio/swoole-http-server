@@ -17,7 +17,7 @@ start-swoole: ## inicia o servidor swoole.
 	@docker exec $(CONTAINER_NAME) /bin/bash -c "php index.php start"
 
 stop-swoole: ## exec
-	@docker exec $(CONTAINER_NAME) /bin/bash -c "php stop index.php" 
+	@docker exec $(CONTAINER_NAME) /bin/bash -c "php index.php stop" 
 
 build: ## build containers
 	@docker build --no-cache -t $(CONTAINER_NAME) .
