@@ -28,4 +28,8 @@ stop: ## stop containers
 destroy: ## destroy
 	@docker rm -vf $(CONTAINER_NAME)
 
+composer: ## roda o composer
+	@docker exec $(CONTAINER_NAME) /bin/bash -c "composer install"
+
 fresh: stop destroy build run
+
